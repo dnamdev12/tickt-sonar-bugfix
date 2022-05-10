@@ -1,0 +1,291 @@
+
+* {
+	font-family:  sans-serif;
+}
+
+
+.flex_row {
+  display: flex;
+  margin: 0 -10px;
+  flex-wrap: wrap;
+}
+.flex_col_sm_2 {
+  width: 16.66666667%;
+  padding: 0 10px;
+  position: relative;
+}
+.flex_col_sm_3 {
+  width: 25%;
+  padding: 0 10px;
+}
+.flex_col_sm_4 {
+  width: 33.3%;
+  padding: 0 10px;
+  @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+    width: 50%;
+  }
+  @media (max-width: 768px) {
+    width: 50%;
+  }
+  @media (max-width: 650px) {
+    width: 100%;
+  }
+}
+
+.flex_col_sm_5 {
+  width: 41.666667%;
+  padding: 0 10px;
+  @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+    width: 75%;
+  }
+  @media (max-width: 650px) {
+    width: 100%;
+  }
+}
+
+.flex_col_sm_6 {
+  width: 50%;
+  padding: 0 10px;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}
+.flex_col_xs_6 {
+  width: 50%;
+  padding: 0 10px;
+}
+.flex_col_sm_7 {
+  width: 58.333333%;
+  padding: 0 10px;
+  @media (max-width: 650px) {
+    width: 100%;
+  }
+}
+.flex_col_sm_8 {
+  width: 66.666667%;
+  padding: 0 10px;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}
+.flex_col_sm_9 {
+  width: 75%;
+  padding: 0 10px;
+}
+.flex_col_sm_10 {
+  width: 83.33333333%;
+  padding: 0 10px;
+}
+.flex_col_sm_12 {
+  width: 100%;
+  padding: 0 10px;
+}
+
+.end_flex {
+  align-items: flex-end;
+}
+
+.f_col {
+  @media (max-width: 650px) {
+    flex-flow: column;
+  }
+}
+
+.f_reverse {
+  @media (max-width: 650px) {
+    flex-flow: column-reverse;
+  }
+}
+
+.center_flex {
+  align-items: center;
+  @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+    align-items: flex-start;
+  }
+}
+
+.f_row {
+  display: flex;
+}
+.h-100{
+  height: 100%;
+}
+
+.f_column {
+  display: flex;
+  flex-flow: column;
+}
+
+.row_wrap {
+  display: flex;
+}
+
+.f_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.f_spacebw {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .show_label {
+    margin-bottom: 0;
+    font-family: "Neue Haas Grotesk Text Pro Medium";
+  }
+}
+
+.onboard_wrapper {
+  position: relative;
+  background: url("../images/onboarding-clip.png") no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  width: 100%;
+  height: 248px;
+  .onboarding_head {
+    position: relative;
+    text-align: center;
+    margin: 100px 0 auto;
+    @media (max-width: 768px) {
+      margin: 50px auto;
+      text-align: center;
+    }
+    @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+      margin: 50px 0 0 140px;
+    }
+    .back_btn {
+      background: url("../images/ic-back.png") center no-repeat;
+      position: absolute;
+      top: 0;
+      left: -100px;
+      width: 40px;
+      height: 40px;
+      z-index: 9;
+      @media (max-width: 768px) {
+        left: 60px;
+      }
+      @media (max-width: 650px) {
+        left: 10px;
+        top: -6px;
+      }
+    }
+
+    h1 {
+      position: relative;
+      font: 32px/1.16 "Neue Haas Grotesk Text Pro Medium";
+      color: var(--white);
+      margin-bottom: 15px;
+      @media (max-width: 650px) {
+        font-size: 22px;
+      }
+    }
+    .show_label {
+      color: var(--white);
+    }
+  }
+
+  .custom_steppr {
+    display: flex;
+    align-items: center;
+    margin: 16px 0;
+    @media (max-width: 768px) {
+      justify-content: center;
+    }
+    li {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      margin-right: 12px;
+      background-color: #748092;
+      border-radius: 50%;
+      &.active {
+        background-color: var(--yellow);
+      }
+    }
+  }
+}
+
+.choose_qf {
+  display: flex;
+  flex-flow: column;
+  margin-bottom: 10px;
+  [type="checkbox"] + label {
+    padding-left: 35px;
+  }
+  .checkbox_wrap {
+    label {
+      max-width: 240px;
+    }
+  }
+  .f_spacebw {
+    margin-bottom: 24px;
+  }
+}
+.upload_btn {
+  @include border-radius(3px);
+  background-color: var(--grey);
+  font: 12px "Neue Haas Grotesk Text Pro Medium";
+  color: var(--blue);
+  padding: 10px 15px;
+  display: inline-block;
+  cursor: pointer;
+  z-index: 9;
+  &.disable {
+    background-color: #dfe5ef6e;
+    pointer-events: none;
+    color: #c2c2c7;
+  }
+}
+
+.add_qf_doc {
+  margin-bottom: 40px;
+  .upload_doc {
+    text-align: center;
+    margin: 0 0 50px;
+  }
+}
+
+.left_col {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  // @media (max-width: 1150px) {
+  //   width: 380px;
+  // }
+  // @media (max-width: 768px) {
+  //   display: none;
+  // }
+  // @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  //   display: none;
+  // }
+}
+.text-left {
+  text-align: left;
+}
+.initial_head {
+  padding-bottom: 6rem;
+}
+.left_col_hide {
+  display: none;
+}
+.right_col {
+  max-width: 1200px;
+  // width: 100%;
+  margin: 0 auto;
+  @media (max-width: 1420px) {
+    width: 1400px;
+  }
+  @media (max-width: 1150px) {
+    padding-left: 380px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0;
+    width: 100%;
+  }
+  @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+    width: 100%;
+    padding: 0;
+  }
+}
