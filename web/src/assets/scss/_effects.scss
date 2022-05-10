@@ -1,0 +1,452 @@
+/*-------------------Link hover effect---------------*/
+
+* {
+	font-family:  sans-serif;
+}
+
+.link {
+	position: relative;
+	font: 14px 'Neue Haas Grotesk Text Pro Medium';
+	color: var(--blue-two);
+	cursor: pointer;
+	@media (max-width: 812px) {
+		font-size: 13px !important;
+	}
+	@media (max-width: 320px) {
+		font-size: 11px;
+	}
+	&:after {
+		content: "";
+		@include position(absolute, auto, auto, 0, 0);
+		width: 0;
+		height: 1px;
+		background: var(--blue);
+		-webkit-transition: all ease 0.4s;
+		-o-transition: all ease 0.4s;
+		transition: all ease 0.4s;
+	}
+	&:hover {
+		color: var(--blue) !important;
+		&:after {
+			width: 100%;
+		}
+	}
+}
+
+
+/*-------------------Link hover effect close---------------*/
+
+
+/*--------------------------video media effect------------------------*/
+
+.video-play-button {
+	@include position(absolute, 50%, auto, auto, 50%);
+	z-index: 10;
+	transform: translate(-50%, -50%);
+	box-sizing: content-box;
+	display: block;
+	width: 20px;
+	height: 22px;
+	@include border-radius(50%);
+	padding: 18px 20px 18px 28px;
+	&:before {
+		content: "";
+		@include position(absolute, 50%, auto, auto, 50%);
+		z-index: 0;
+		transform: translate(-50%, -50%);
+		display: block;
+		width: 50px;
+		height: 50px;
+		background: #b04206;
+		@include border-radius(50%);
+		animation: pulse-border 1500ms ease-out infinite;
+	}
+	&:after {
+		content: "";
+		@include position(absolute, 50%, auto, auto, 50%);
+		z-index: 1;
+		transform: translate(-50%, -50%);
+		display: block;
+		width: 50px;
+		height: 50px;
+		background: #fc6e20;
+		@include border-radius(50%);
+		transition: all 200ms;
+	}
+	&:hover:after {
+		background-color: darken(#fc6e20, 10%);
+	}
+	img {
+		position: relative;
+		z-index: 3;
+		max-width: 100%;
+		width: auto;
+		height: auto;
+	}
+	span {
+		display: block;
+		position: relative;
+		z-index: 3;
+		width: 0;
+		height: 0;
+		border-left: 18px solid var(--white);
+		border-top: 11px solid transparent;
+		border-bottom: 10px solid transparent;
+	}
+}
+
+@keyframes pulse-border {
+	0% {
+		transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+		opacity: 1;
+	}
+	100% {
+		transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
+		opacity: 0;
+	}
+}
+
+
+/*--------------------------video media effect close------------------------*/
+
+
+/*--------------------Text Effect--------------------------*/
+
+.text_effect {
+	animation: textAnimation 1.8s linear infinite alternate;
+}
+
+@keyframes textAnimation {
+	from {
+		width: 0;
+		color: #d3d3d3;
+	}
+	to {
+		max-width: 600px;
+		width: 100%;
+		color: var(--white);
+	}
+}
+
+
+
+.text_shine{
+  color: #ffffff;
+  background: linear-gradient(to right, #fff 0, #fee600 10%, #fff 20%);
+  background-position: 0;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s infinite linear;
+  animation-fill-mode: forwards;
+  -webkit-text-size-adjust: none;
+}
+@keyframes shine{
+  0%{
+    background-position: 0;
+	}
+  60%{
+    background-position: 480px;
+  }
+  100%{
+    background-position: 480px;
+  }
+}
+
+/*--------------------Text Effect--------------------------*/
+
+
+/*--------------------Bell effect--------------------------*/
+
+.bell {
+	img {
+		&:hover {
+			animation: ring 0.8s ease;
+		}
+	}
+}
+
+@keyframes ring {
+	0% {
+		transform: rotate(35deg);
+	}
+	12.5% {
+		transform: rotate(-30deg);
+	}
+	25% {
+		transform: rotate(25deg);
+	}
+	37.5% {
+		transform: rotate(-20deg);
+	}
+	50% {
+		transform: rotate(15deg);
+	}
+	62.5% {
+		transform: rotate(-10deg);
+	}
+	75% {
+		transform: rotate(5deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
+}
+
+
+/*--------------------Bell effect close--------------------------*/
+
+
+/*--------------------btn effect--------------------------*/
+
+.view_more {
+	position: relative;
+	&:after {
+		content: '';
+		@include position(absolute, 50%, 0px, auto, auto);
+		opacity: 0;
+		transform: translateY(-50%);
+		font-size: 30px;
+		transition: 0.5s;
+		background: url('../images/icon-direction-right.png') center no-repeat;
+		background-size: contain;
+		width: 20px;
+		height: 20px;
+	}
+	&:hover {
+		&:after {
+			opacity: 1;
+			right: 50px;
+		}
+	}
+}
+
+
+.btn-effect{
+	position: relative;
+	overflow: hidden;
+	&::before{
+		width: 0%;
+		content: "";
+		background: #ffffff4f;
+		height: 100%;
+		@include position(absolute, auto, auto, 0, auto);
+		opacity: 0;
+		-webkit-transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
+		transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
+		right: 50%;
+	}
+	&::after{
+		width: 0%;
+		content: "";
+		background: #ffffff4f;
+		height: 100%;
+		@include position(absolute, auto, auto, 0, auto);
+		opacity: 0;
+		-webkit-transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
+		transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
+		left: 50%;
+	}
+	&:hover{
+		&::before, &::after{
+			width: 50%;
+			opacity: 1;
+		}
+	}
+}
+
+
+
+/* Ripple Out */
+
+@-webkit-keyframes hvr-ripple-out {
+    100% {
+        top: -12px;
+        right: -12px;
+        bottom: -12px;
+        left: -12px;
+        opacity: 0;
+    }
+}
+
+@keyframes hvr-ripple-out {
+    100% {
+        top: -12px;
+        right: -12px;
+        bottom: -12px;
+        left: -12px;
+        opacity: 0;
+    }
+}
+
+.hvr-ripple-out {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+	&:before {
+		content: '';
+		position: absolute;
+		border: var(--grey) solid 6px;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		-webkit-animation-duration: 1s;
+		animation-duration: 1s;
+	}
+	
+}
+.hvr-ripple-out:hover:before,
+.hvr-ripple-out:focus:before,
+.hvr-ripple-out:active:before {
+    -webkit-animation-name: hvr-ripple-out;
+    animation-name: hvr-ripple-out;
+}
+
+
+/*--------------------btn effect close--------------------------*/
+
+
+/*--------------------circle effect---------------------*/
+
+.circle {
+	position: relative;
+	border-radius: 100%;
+	box-shadow: none;
+	&:hover {
+		color: var(--blue-two);
+	}
+	&::before,
+	&::after {
+		content: "";
+		top: 0;
+		left: 0;
+		box-sizing: inherit;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		border-radius: 100%;
+	}
+	&::before {
+		border: 2px solid transparent; // We're animating border-color again
+	}
+	&:hover::before {
+		border-top-color: var(--blue-two); // Show borders
+		border-right-color: var(--blue-two);
+		border-bottom-color: var(--blue-two);
+		transition: border-top-color 0.15s linear, // Stagger border appearances
+		border-right-color 0.15s linear 0.10s, border-bottom-color 0.15s linear 0.20s;
+	}
+	&::after {
+		border: 0 solid transparent; // Makes border thinner at the edges? I forgot what I was doing
+	}
+	&:hover::after {
+		border-top: 2px solid var(--blue-two); // Shows border
+		border-left-width: 2px; // Solid edges, invisible borders
+		border-right-width: 2px; // Solid edges, invisible borders
+		transform: rotate(270deg); // Rotate around circle
+		transition: transform 0.4s linear 0s, border-left-width 0s linear 0.35s; // Solid edge post-rotation
+	}
+}
+
+
+/*--------------------circle effect close---------------------*/
+
+
+/*--------------------draw effect---------------------*/
+.draw{
+  position: relative;
+}
+.draw::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: 0;
+  height: 0;
+  background: transparent;
+  border: 2px solid transparent;
+  border-radius: 3px;
+}
+
+.draw:hover::before {
+  animation: animate 0.5s linear forwards;
+}
+
+@keyframes animate {
+  0% {
+      width: 0;
+      height: 0;
+      border-top-color: var(--blue-two);
+      border-right-color: transparent;
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+  }
+
+  50% {
+      width: 100%;
+      height: 0;
+      border-top-color: var(--blue-two);
+      border-right-color: var(--blue-two);
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+  }
+
+  100% {
+      width: 100%;
+      height: 100%;
+      border-top-color: var(--blue-two);
+      border-right-color: var(--blue-two);
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+  }
+}
+
+.draw::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: 0;
+  height: 0;
+  background: transparent;
+  border: 2px solid transparent;
+  border-radius: 3px;
+}
+
+.draw:hover::after {
+  animation: animates 0.5s linear forwards;
+}
+
+@keyframes animates {
+  0% {
+      width: 0;
+      height: 0;
+      border-top-color: transparent;
+      border-right-color: transparent;
+      border-bottom-color: transparent;
+      border-left-color: var(--blue-two);
+  }
+
+  50% {
+      width: 0;
+      height: 100%;
+      border-top-color: transparent;
+      border-right-color: transparent;
+      border-bottom-color: var(--blue-two);
+      border-left-color: var(--blue-two);
+  }
+
+  100% {
+      width: 100%;
+      height: 100%;
+      border-top-color: transparent;
+      border-right-color: transparent;
+      border-bottom-color: var(--blue-two);
+      border-left-color: var(--blue-two);
+  }
+}
+
+/*--------------------draw effect close---------------------*/
